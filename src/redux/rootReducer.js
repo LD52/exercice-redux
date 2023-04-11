@@ -3,7 +3,17 @@ const initialState = {
 }
 
 function rootReducer (state = initialState, action ){
-    return state; 
+    switch (action.type){
+        case 'CHANGE-NAME' : {
+            return{
+                ...initialState, 
+                name : action.payload
+            }
+        }
+         default : {
+        return state ; 
+    }
+    }
 }
 
 
